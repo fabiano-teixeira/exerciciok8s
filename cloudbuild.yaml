@@ -14,17 +14,20 @@ steps:
   - id: "Instalando o GO ..."
     name: 'gcr.io/cloud-builders/go'
     args: ['install', '.']
-    env: ['PROJECT_ROOT=3-desafio_go']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
 
   - id: "Rodando testes ..."
     name: 'gcr.io/cloud-builders/go'
     args: ['test', 'server']
-    env: ['PROJECT_ROOT=3-desafio_go']
-      
-  - id: "Executando a função soma."
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
+
+  - id: "Executando o build da aplicação."
     name: 'gcr.io/cloud-builders/go'
-    args: ['run', 'server.go']
-    env: ['PROJECT_ROOT=3-desafio_go']
+    args: ['build', '-o', '$GOPATH/src/greeting/webserver-go-greeting']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
 
 images:
   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
