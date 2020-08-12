@@ -11,7 +11,7 @@ COPY ./server.go ./server_test.go ./
 RUN go get -d -v
 RUN go build -o $GOPATH/src/greeting/webserver-go-greeting
 
-FROM alpine AS final
+FROM scratch AS final
 
 WORKDIR /app
 
