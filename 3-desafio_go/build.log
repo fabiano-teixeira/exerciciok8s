@@ -1,0 +1,155 @@
+starting build "2639ddf5-bfd2-4247-836d-50a12b947a6f"
+
+FETCHSOURCE
+Fetching storage object: gs://80868692064.cloudbuild-source.googleusercontent.com/838b7034b18247d7778a7e12a2a200f01906939a-9ae42516-0ff8-4153-837c-94d304087b73.tar.gz#1597269825802561
+Copying gs://80868692064.cloudbuild-source.googleusercontent.com/838b7034b18247d7778a7e12a2a200f01906939a-9ae42516-0ff8-4153-837c-94d304087b73.tar.gz#1597269825802561...
+/ [0 files][    0.0 B/  3.3 KiB]                                                
+/ [1 files][  3.3 KiB/  3.3 KiB]                                                
+Operation completed over 1 objects/3.3 KiB.                                      
+BUILD
+Starting Step #0 - "Rodando testes ..."
+Step #0 - "Rodando testes ...": Already have image (with digest): gcr.io/cloud-builders/go
+Step #0 - "Rodando testes ...": 
+Step #0 - "Rodando testes ...":                    ***** NOTICE *****
+Step #0 - "Rodando testes ...": 
+Step #0 - "Rodando testes ...": Alternative official `golang` images, including multiple versions across
+Step #0 - "Rodando testes ...": multiple platforms, are maintained by the Docker Community.
+Step #0 - "Rodando testes ...": 
+Step #0 - "Rodando testes ...": For details, visit https://hub.docker.com/_/golang.
+Step #0 - "Rodando testes ...": 
+Step #0 - "Rodando testes ...":                 ***** END OF NOTICE *****
+Step #0 - "Rodando testes ...": 
+Step #0 - "Rodando testes ...": Creating shadow workspace and symlinking source into "./gopath/src/server".
+Step #0 - "Rodando testes ...": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #0 - "Rodando testes ...": Running: go test server
+Step #0 - "Rodando testes ...": ok  	server	0.002s
+Finished Step #0 - "Rodando testes ..."
+Starting Step #1 - "Instalando o GO ..."
+Step #1 - "Instalando o GO ...": Already have image (with digest): gcr.io/cloud-builders/go
+Step #1 - "Instalando o GO ...": 
+Step #1 - "Instalando o GO ...":                    ***** NOTICE *****
+Step #1 - "Instalando o GO ...": 
+Step #1 - "Instalando o GO ...": Alternative official `golang` images, including multiple versions across
+Step #1 - "Instalando o GO ...": multiple platforms, are maintained by the Docker Community.
+Step #1 - "Instalando o GO ...": 
+Step #1 - "Instalando o GO ...": For details, visit https://hub.docker.com/_/golang.
+Step #1 - "Instalando o GO ...": 
+Step #1 - "Instalando o GO ...":                 ***** END OF NOTICE *****
+Step #1 - "Instalando o GO ...": 
+Step #1 - "Instalando o GO ...": Creating shadow workspace and symlinking source into "./gopath/src/server".
+Step #1 - "Instalando o GO ...":   File: './gopath/src/server' -> '/workspace/3-desafio_go'
+Step #1 - "Instalando o GO ...":   Size: 23        	Blocks: 0          IO Block: 4096   symbolic link
+Step #1 - "Instalando o GO ...": Device: 801h/2049d	Inode: 1290267     Links: 1
+Step #1 - "Instalando o GO ...": Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Step #1 - "Instalando o GO ...": Access: 2020-08-12 22:04:02.000000000
+Step #1 - "Instalando o GO ...": Modify: 2020-08-12 22:04:02.000000000
+Step #1 - "Instalando o GO ...": Change: 2020-08-12 22:04:02.000000000
+Step #1 - "Instalando o GO ...": 
+Step #1 - "Instalando o GO ...": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #1 - "Instalando o GO ...": Binaries built using 'go install' will go to "/workspace/3-desafio_go/gopath/bin".
+Step #1 - "Instalando o GO ...": Running: go install .
+Finished Step #1 - "Instalando o GO ..."
+Starting Step #2 - "Executando o build da aplicaÃ§Ã£o."
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Already have image (with digest): gcr.io/cloud-builders/go
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": 
+Step #2 - "Executando o build da aplicaÃ§Ã£o.":                    ***** NOTICE *****
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": 
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Alternative official `golang` images, including multiple versions across
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": multiple platforms, are maintained by the Docker Community.
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": 
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": For details, visit https://hub.docker.com/_/golang.
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": 
+Step #2 - "Executando o build da aplicaÃ§Ã£o.":                 ***** END OF NOTICE *****
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": 
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Creating shadow workspace and symlinking source into "./gopath/src/server".
+Step #2 - "Executando o build da aplicaÃ§Ã£o.":   File: './gopath/src/server' -> '/workspace/3-desafio_go'
+Step #2 - "Executando o build da aplicaÃ§Ã£o.":   Size: 23        	Blocks: 0          IO Block: 4096   symbolic link
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Device: 801h/2049d	Inode: 1290267     Links: 1
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Access: (0777/lrwxrwxrwx)  Uid: (    0/    root)   Gid: (    0/    root)
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Access: 2020-08-12 22:04:02.000000000
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Modify: 2020-08-12 22:04:02.000000000
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Change: 2020-08-12 22:04:02.000000000
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": 
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md
+Step #2 - "Executando o build da aplicaÃ§Ã£o.": Running: go build -o greeting/webserver-go-greeting
+Finished Step #2 - "Executando o build da aplicaÃ§Ã£o."
+Starting Step #3 - "Executando build do container"
+Step #3 - "Executando build do container": Already have image (with digest): gcr.io/cloud-builders/docker
+Step #3 - "Executando build do container": 
+Step #3 - "Executando build do container":                    ***** NOTICE *****
+Step #3 - "Executando build do container": 
+Step #3 - "Executando build do container": Alternative official `docker` images, including multiple versions across
+Step #3 - "Executando build do container": multiple platforms, are maintained by the Docker Team. For details, please
+Step #3 - "Executando build do container": visit https://hub.docker.com/_/docker.
+Step #3 - "Executando build do container": 
+Step #3 - "Executando build do container":                 ***** END OF NOTICE *****
+Step #3 - "Executando build do container": 
+Step #3 - "Executando build do container": Sending build context to Docker daemon  14.96MB
+
+Step #3 - "Executando build do container": Step 1/13 : FROM golang:1.14.6-alpine as builder
+Step #3 - "Executando build do container": 1.14.6-alpine: Pulling from library/golang
+Step #3 - "Executando build do container": Digest: sha256:d6deb50437547fd7226890aa19b075fbf7f5063e3c0d7a2eaf7fb41d11069013
+Step #3 - "Executando build do container": Status: Downloaded newer image for golang:1.14.6-alpine
+Step #3 - "Executando build do container":  ---> 30df784d6206
+Step #3 - "Executando build do container": Step 2/13 : ENV GOPATH /go
+Step #3 - "Executando build do container":  ---> Running in 4907f194fa79
+Step #3 - "Executando build do container": Removing intermediate container 4907f194fa79
+Step #3 - "Executando build do container":  ---> 99f82980cabf
+Step #3 - "Executando build do container": Step 3/13 : RUN apk update && apk add --no-cache git & mkdir $GOPATH/src/greeting/
+Step #3 - "Executando build do container":  ---> Running in 96bfa18b9055
+Step #3 - "Executando build do container": Removing intermediate container 96bfa18b9055
+Step #3 - "Executando build do container":  ---> 089a8e837f6d
+Step #3 - "Executando build do container": Step 4/13 : WORKDIR $GOPATH/src/greeting/
+Step #3 - "Executando build do container":  ---> Running in 10cf4d3fb06e
+Step #3 - "Executando build do container": Removing intermediate container 10cf4d3fb06e
+Step #3 - "Executando build do container":  ---> c30954696d4f
+Step #3 - "Executando build do container": Step 5/13 : COPY ./server.go ./server_test.go ./
+Step #3 - "Executando build do container":  ---> bdf1323560d8
+Step #3 - "Executando build do container": Step 6/13 : RUN go get -d -v
+Step #3 - "Executando build do container":  ---> Running in 8ee1af76f002
+Step #3 - "Executando build do container": Removing intermediate container 8ee1af76f002
+Step #3 - "Executando build do container":  ---> cd8fc9c2c4dc
+Step #3 - "Executando build do container": Step 7/13 : RUN go build -o $GOPATH/src/greeting/webserver-go-greeting
+Step #3 - "Executando build do container":  ---> Running in 49a2e12383df
+Step #3 - "Executando build do container": Removing intermediate container 49a2e12383df
+Step #3 - "Executando build do container":  ---> cbf094c5c6c5
+Step #3 - "Executando build do container": Step 8/13 : FROM scratch AS final
+Step #3 - "Executando build do container":  ---> 
+Step #3 - "Executando build do container": Step 9/13 : WORKDIR /app
+Step #3 - "Executando build do container":  ---> Running in 4a643b2ba629
+Step #3 - "Executando build do container": Removing intermediate container 4a643b2ba629
+Step #3 - "Executando build do container":  ---> 55ed5ee84605
+Step #3 - "Executando build do container": Step 10/13 : COPY --from=builder /go/src/greeting/webserver-go-greeting .
+Step #3 - "Executando build do container":  ---> aeb21e9efff9
+Step #3 - "Executando build do container": Step 11/13 : USER 1000
+Step #3 - "Executando build do container":  ---> Running in 2ff0fc405ea8
+Step #3 - "Executando build do container": Removing intermediate container 2ff0fc405ea8
+Step #3 - "Executando build do container":  ---> 2d84be618cdd
+Step #3 - "Executando build do container": Step 12/13 : EXPOSE 8000
+Step #3 - "Executando build do container":  ---> Running in f0c78b998056
+Step #3 - "Executando build do container": Removing intermediate container f0c78b998056
+Step #3 - "Executando build do container":  ---> 96356ee13d8a
+Step #3 - "Executando build do container": Step 13/13 : ENTRYPOINT ["./webserver-go-greeting"]
+Step #3 - "Executando build do container":  ---> Running in d692c592535a
+Step #3 - "Executando build do container": Removing intermediate container d692c592535a
+Step #3 - "Executando build do container":  ---> e46272792c67
+Step #3 - "Executando build do container": Successfully built e46272792c67
+Step #3 - "Executando build do container": Successfully tagged gcr.io/codeeducation-test-285316/webserver-go-greeting:1.0.0
+Step #3 - "Executando build do container": Successfully tagged gcr.io/codeeducation-test-285316/webserver-go-greeting:latest
+Finished Step #3 - "Executando build do container"
+PUSH
+Pushing gcr.io/codeeducation-test-285316/webserver-go-greeting:latest
+The push refers to repository [gcr.io/codeeducation-test-285316/webserver-go-greeting]
+c296d5a2c2a7: Preparing
+8be6050b95d7: Preparing
+8be6050b95d7: Pushed
+c296d5a2c2a7: Pushed
+latest: digest: sha256:495247510c242dbb2cbebef07c45d67f808fb0fc5a985bf215733dffc6bd6e81 size: 735
+Pushing gcr.io/codeeducation-test-285316/webserver-go-greeting:1.0.0
+The push refers to repository [gcr.io/codeeducation-test-285316/webserver-go-greeting]
+c296d5a2c2a7: Preparing
+8be6050b95d7: Preparing
+c296d5a2c2a7: Layer already exists
+8be6050b95d7: Layer already exists
+1.0.0: digest: sha256:495247510c242dbb2cbebef07c45d67f808fb0fc5a985bf215733dffc6bd6e81 size: 735
+DONE
