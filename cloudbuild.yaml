@@ -1,6 +1,15 @@
 substitutions:
   _EXERCICIO_K8S_VERSION: 1.0.1
 steps:
+  - id: "Executando build do container"
+    name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest' 
+      - './3-desafio_go/'
 
   - id: "Rodando testes ..."
     name: 'gcr.io/cloud-builders/go'
@@ -19,16 +28,6 @@ steps:
   #   args: ['install', '.']
   #   env: ['PROJECT_ROOT=server']
   #   dir: './3-desafio_go/'
-
-  - id: "Executando build e subindo imagem para GCR privado"
-    name: 'gcr.io/cloud-builders/docker'
-    args:
-      - 'build'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
-      - '-t'
-      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest' 
-      - './3-desafio_go/'
 
 images:
   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
