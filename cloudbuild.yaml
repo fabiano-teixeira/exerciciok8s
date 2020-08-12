@@ -15,9 +15,27 @@ steps:
 
   - id: "Executando o build da aplicação."
     name: 'gcr.io/cloud-builders/go'
-    args: ['build', '-o', 'greeting/webserver-go-greeting']
-    env: ['PROJECT_ROOT=server']
+    args: 
+      - 'build'
+      - '-a'
+      - '-installsuffix'
+      - 'cgo' 
+      - '-ldflags'
+      - '-extldflags "-static"'
+      - '-o'
+      - 'greeting/webserver-go-greeting'
+      - '.'
+    env: 
+      - 'CGO_ENABLED=0'
+      - 'GOOS=linux'
+      - 'PROJECT_ROOT=server'
     dir: './3-desafio_go/'
+
+  # - id: "Executando o build da aplicação."
+  #   name: 'gcr.io/cloud-builders/go'
+  #   args: ['build', '-o', 'greeting/webserver-go-greeting']
+  #   env: ['PROJECT_ROOT=server']
+  #   dir: './3-desafio_go/'
 
   - id: "Executando build do container"
     name: 'gcr.io/cloud-builders/docker'
