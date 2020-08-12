@@ -9,7 +9,7 @@ steps:
       - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
       - '-t'
       - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
-      - './3-desafio_go'
+      - './3-desafio_go/'
       
   - id: "Instalando o GO ..."
     name: 'gcr.io/cloud-builders/go'
