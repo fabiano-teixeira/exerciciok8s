@@ -23,11 +23,11 @@ steps:
     env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
 
-  # - id: "Instalando o GO ..."
-  #   name: 'gcr.io/cloud-builders/go'
-  #   args: ['install', '.']
-  #   env: ['PROJECT_ROOT=server']
-  #   dir: './3-desafio_go/'
+  - id: "Instalando o GO ..."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['install', '.']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
 
 images:
   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
