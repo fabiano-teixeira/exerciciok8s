@@ -13,7 +13,7 @@ steps:
       
   - id: "Instalando o GO ..."
     name: 'gcr.io/cloud-builders/go'
-    args: ['install', './greeting/']
+    args: ['install', '.']
     env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
 
