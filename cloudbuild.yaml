@@ -10,7 +10,7 @@ steps:
 
   - id: "Executando o build da aplicação."
     name: 'gcr.io/cloud-builders/go'
-    args: ['build', '-o', '$GOPATH/src/greeting/webserver-go-greeting']
+    args: ['build', '-o', 'greeting/webserver-go-greeting']
     env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
 
