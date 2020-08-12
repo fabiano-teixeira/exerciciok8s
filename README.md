@@ -23,7 +23,7 @@ Imagem gerada e publicada no dockerhub, no endereço: <br />
 
 Serviço disponibilizado no GCP, conforme instruções.<br /><br />
 
-Said do comando kubectl get svc: <br /><br />
+Saida do comando kubectl get svc: <br />
 ```
 kubectl get svc
 
@@ -33,4 +33,17 @@ mysql-exerck8s-service          ClusterIP      None          <none>          330
 nginx-exerck8s-service          LoadBalancer   10.4.13.248   34.70.134.170   80:31691/TCP     17h
 php-apache-hpa                  ClusterIP      10.4.15.129   <none>          80/TCP           19h
 webserver-go-greeting-service   LoadBalancer   10.4.1.236    34.71.211.54    8000:31220/TCP   116s
+```
+<br />
+
+Saida do comando kubectl get pods: <br />
+```
+kubectl get pods
+NAME                                     READY   STATUS    RESTARTS   AGE
+mysql-server-exerck8s-85c56fbd59-ggctc   1/1     Running   0          17h
+nginx-exerck8s-65866d67b8-2tsjv          1/1     Running   0          17h
+nginx-exerck8s-65866d67b8-7mvds          1/1     Running   0          17h
+nginx-exerck8s-65866d67b8-q8hnd          1/1     Running   0          17h
+php-apache-hpa-dbcb5c7d9-pwldb           1/1     Running   0          19h
+webserver-go-greeting-6b6bf9474d-xbqz4   1/1     Running   0          36m
 ```

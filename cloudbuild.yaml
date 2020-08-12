@@ -1,0 +1,32 @@
+substitutions:
+  _EXERCICIO_K8S_VERSION: 1.0.0
+steps:
+  - id: "Executando build e subindo imagem para GCR privado"
+    name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
+      - '.'
+      
+  - id: "Instalando o GO ..."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['install', '.']
+    env: ['PROJECT_ROOT=webserver-go-greeting']
+
+  - id: "Rodando testes ..."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test', 'server']
+    env: ['PROJECT_ROOT=webserver-go-greeting']
+      
+  - id: "Executando a função soma."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['run', 'server.go']
+    env: ['PROJECT_ROOT=webserver-go-greeting']
+
+images:
+  - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
+  - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_DESAFIO_CI_VERSION}'
+tags: ['fullcycle-exercicio-k8s']
