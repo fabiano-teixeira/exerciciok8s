@@ -5,7 +5,7 @@ steps:
   - id: "Rodando testes ..."
     name: 'gcr.io/cloud-builders/go'
     args: ['test', 'server']
-    env: ['PROJECT_ROOT=./3-desafio_go/server']
+    env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
 
   # - id: "Executando build e subindo imagem para GCR privado"
