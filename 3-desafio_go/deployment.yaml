@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: webserver-go-greeting
+spec: 
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: webserver-go-greeting
+
+  template: 
+    metadata:
+      labels:      
+        app: webserver-go-greeting
+
+    spec:
+      containers:
+      - image: fabianoteixeirasilva/webserver-go-greeting:latest
+        name: webserver-go-greeting        
+        ports:
+        - containerPort: 8000

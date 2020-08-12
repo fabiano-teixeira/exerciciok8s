@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nginx-exerck8s
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-exerck8s
+  template: 
+    metadata:
+      labels:
+        app: nginx-exerck8s
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.18-alpine
+        ports:
+        - containerPort: 80
+
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "200m"
+          limits:
+            cpu: "250m"
+            memory: "200Mi"
+
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d
+          name: nginx-exerck8s-conf
+          readOnly: true
+        - mountPath: /usr/share/nginx/html/index.html
+          name: nginx-exerck8s-conf
+          subPath: index.html
+      
+      volumes: 
+      - name: nginx-exerck8s-conf
+        configMap:
+          name: nginx-exerck8s-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf
+            - key: index.html
+              path: index.html
