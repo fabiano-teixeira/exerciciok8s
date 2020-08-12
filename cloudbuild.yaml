@@ -31,12 +31,6 @@ steps:
       - 'PROJECT_ROOT=server'
     dir: './3-desafio_go/'
 
-  # - id: "Executando o build da aplicação."
-  #   name: 'gcr.io/cloud-builders/go'
-  #   args: ['build', '-o', 'greeting/webserver-go-greeting']
-  #   env: ['PROJECT_ROOT=server']
-  #   dir: './3-desafio_go/'
-
   - id: "Executando build do container"
     name: 'gcr.io/cloud-builders/docker'
     args:
