@@ -37,9 +37,9 @@ Saida do comando kubectl get svc:
 ```
 kubectl get svc
 NAME                            TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)          AGE
-kubernetes                      ClusterIP      10.4.0.1      <none>          443/TCP          27h
-mysql-exerck8s-service          ClusterIP      None          <none>          3306/TCP         10h
+kubernetes                      ClusterIP      10.4.0.1      none            443/TCP          27h
+mysql-exerck8s-service          ClusterIP      None          none            3306/TCP         10h
 nginx-exerck8s-service          LoadBalancer   10.4.13.248   34.70.134.170   80:31691/TCP     21h
-php-apache-hpa                  ClusterIP      10.4.15.129   <none>          80/TCP           23h
+php-apache-hpa                  ClusterIP      10.4.15.129   none             80/TCP           23h
 webserver-go-greeting-service   LoadBalancer   10.4.1.236    34.71.211.54    8000:31220/TCP   4h41m
 ```
