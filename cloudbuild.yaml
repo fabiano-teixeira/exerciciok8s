@@ -1,5 +1,5 @@
 substitutions:
-  _EXERCICIO_K8S_VERSION: 1.0.0
+  _EXERCICIO_K8S_VERSION: 1.0.1
 steps:
 
   - id: "Rodando testes ..."
@@ -25,9 +25,9 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
-      - '-t'
       - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest' 
       - './3-desafio_go/'
 
 images:
