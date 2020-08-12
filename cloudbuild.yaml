@@ -1,5 +1,5 @@
 substitutions:
-  _EXERCICIO_K8S_VERSION: 1.0.1
+  _EXERCICIO_K8S_VERSION: 1.0.0
 steps:
   - id: "Executando build do container"
     name: 'gcr.io/cloud-builders/docker'
@@ -31,5 +31,5 @@ steps:
 
 images:
   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
-  - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_DESAFIO_CI_VERSION}'
+  - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
 tags: ['fullcycle-exercicio-k8s']
