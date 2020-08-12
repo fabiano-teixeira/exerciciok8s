@@ -1,6 +1,24 @@
 substitutions:
   _EXERCICIO_K8S_VERSION: 1.0.0
 steps:
+  - id: "Rodando testes ..."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test', 'server']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
+
+  - id: "Instalando o GO ..."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['install', '.']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
+
+  - id: "Executando o build da aplicação."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['build', '-o', 'greeting/webserver-go-greeting']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
+    
   - id: "Executando build do container"
     name: 'gcr.io/cloud-builders/docker'
     args:
@@ -11,23 +29,6 @@ steps:
       - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest' 
       - './3-desafio_go/'
 
-  - id: "Rodando testes ..."
-    name: 'gcr.io/cloud-builders/go'
-    args: ['test', 'server']
-    env: ['PROJECT_ROOT=server']
-    dir: './3-desafio_go/'
-
-  - id: "Executando o build da aplicação."
-    name: 'gcr.io/cloud-builders/go'
-    args: ['build', '-o', 'greeting/webserver-go-greeting']
-    env: ['PROJECT_ROOT=server']
-    dir: './3-desafio_go/'
-
-  - id: "Instalando o GO ..."
-    name: 'gcr.io/cloud-builders/go'
-    args: ['install', '.']
-    env: ['PROJECT_ROOT=server']
-    dir: './3-desafio_go/'
 
 images:
   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
