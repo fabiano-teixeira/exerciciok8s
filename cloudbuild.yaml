@@ -8,11 +8,17 @@ steps:
     env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
 
-  - id: "Instalando o GO ..."
+  - id: "Executando o build da aplicação."
     name: 'gcr.io/cloud-builders/go'
-    args: ['install', '.']
+    args: ['build', '-o', '$GOPATH/src/greeting/webserver-go-greeting']
     env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
+
+  # - id: "Instalando o GO ..."
+  #   name: 'gcr.io/cloud-builders/go'
+  #   args: ['install', '.']
+  #   env: ['PROJECT_ROOT=server']
+  #   dir: './3-desafio_go/'
 
   # - id: "Executando build e subindo imagem para GCR privado"
   #   name: 'gcr.io/cloud-builders/docker'
@@ -25,13 +31,7 @@ steps:
   #     - './3-desafio_go/'
       
 
-  # - id: "Executando o build da aplicação."
-  #   name: 'gcr.io/cloud-builders/go'
-  #   args: ['build', '-o', '$GOPATH/src/greeting/webserver-go-greeting']
-  #   env: ['PROJECT_ROOT=server']
-  #   dir: './3-desafio_go/'
-
-images:
-  - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
-  - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_DESAFIO_CI_VERSION}'
-tags: ['fullcycle-exercicio-k8s']
+# images:
+#   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:latest'
+#   - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_DESAFIO_CI_VERSION}'
+# tags: ['fullcycle-exercicio-k8s']
