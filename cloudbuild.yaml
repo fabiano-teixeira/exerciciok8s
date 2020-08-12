@@ -8,6 +8,12 @@ steps:
     env: ['PROJECT_ROOT=server']
     dir: './3-desafio_go/'
 
+  - id: "Instalando o GO ..."
+    name: 'gcr.io/cloud-builders/go'
+    args: ['install', '.']
+    env: ['PROJECT_ROOT=server']
+    dir: './3-desafio_go/'
+
   # - id: "Executando build e subindo imagem para GCR privado"
   #   name: 'gcr.io/cloud-builders/docker'
   #   args:
@@ -18,12 +24,6 @@ steps:
   #     - 'gcr.io/$PROJECT_ID/webserver-go-greeting:${_EXERCICIO_K8S_VERSION}'
   #     - './3-desafio_go/'
       
-  # - id: "Instalando o GO ..."
-  #   name: 'gcr.io/cloud-builders/go'
-  #   args: ['install', '.']
-  #   env: ['PROJECT_ROOT=server']
-  #   dir: './3-desafio_go/'
-
 
   # - id: "Executando o build da aplicação."
   #   name: 'gcr.io/cloud-builders/go'
