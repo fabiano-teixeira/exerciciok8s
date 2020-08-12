@@ -8,17 +8,13 @@ WORKDIR $GOPATH/src/greeting/
 
 COPY ./server.go ./server_test.go ./
 
-RUN go get -d -v
-RUN go build -o $GOPATH/src/greeting/webserver-go-greeting
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-extldflags "-static"' -o $GOPATH/src/greeting/webserver-go-greeting .
 
-FROM scratch AS final
+FROM scratch
 
+COPY --from=builder /go/src/greeting/webserver-go-greeting /app/
 WORKDIR /app
-
-COPY --from=builder /go/src/greeting/webserver-go-greeting .
-
 USER 1000
-
 EXPOSE 8000
 
 ENTRYPOINT ["./webserver-go-greeting"]
