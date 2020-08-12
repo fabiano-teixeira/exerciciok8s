@@ -17,7 +17,7 @@ Arquivos localizados na pasta 2-mysql.<br /><br />
 Arquivos localizados na pasta 3-desafio_go.<br />
 Aplicativo criado conforme instruções do exercício e disponibilizado na porta 8000.<br />
 Testes Criados.<br />
-Processo de CI ativado no GCB. *<br />
+Processo de CI ativado no GCB. Log do build encontra-se no arquivo "build.log"<br />
 Imagem gerada e publicada no dockerhub, no endereço: <br />
     https://hub.docker.com/repository/docker/fabianoteixeirasilva/webserver-go-greeting<br />
 

@@ -5,20 +5,20 @@ steps:
     name: 'gcr.io/cloud-builders/go'
     args: ['test', 'server']
     env: ['PROJECT_ROOT=server']
-    dir: './3-desafio_go/'
+    #dir: './3-desafio_go/'
 
   - id: "Instalando o GO ..."
     name: 'gcr.io/cloud-builders/go'
     args: ['install', '.']
     env: ['PROJECT_ROOT=server']
-    dir: './3-desafio_go/'
+    #dir: './3-desafio_go/'
 
   - id: "Executando o build da aplicação."
     name: 'gcr.io/cloud-builders/go'
     args: ['build', '-o', 'greeting/webserver-go-greeting']
     env: ['PROJECT_ROOT=server']
-    dir: './3-desafio_go/'
-    
+    #dir: './3-desafio_go/'
+
   - id: "Executando build do container"
     name: 'gcr.io/cloud-builders/docker'
     args:
