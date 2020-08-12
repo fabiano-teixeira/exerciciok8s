@@ -1,29 +1,27 @@
-## Informações sobre o exercício "Utilizando K8S" (12/08/2020)
+### Informações sobre o exercício "Utilizando K8S" (12/08/2020)
 
 <p>
-Exercício realizado conforme informações abaixo:
+Exercício realizado conforme informações abaixo:<br />
 
 Utilizando os conhecimentos adquiridos até o momento, crie os arquivos declarativos do Kubernetes para que os seviços abaixam possam ser executados.
 
-1) Servidor Web - Nginx
+1) Servidor Web - Nginx  
     Arquivos localizados na pasta 1-webserver-nginx.
 
-2) Configuração do MySQL
+2) Configuração do MySQL  
+    Arquivos localizados na pasta 2-mysql.<br />
 
-    Arquivos localizados na pasta 2-mysql.<br /><br />
-
-3) Desafio Go!<br /><br />
-
-    Arquivos localizados na pasta 3-desafio_go.<br />
-    Aplicativo criado conforme instruções do exercício e disponibilizado na porta 8000.<br />
-    Testes Criados.<br />
-    Processo de CI ativado no GCB. Log do build encontra-se no arquivo "build.log"<br />
-    Imagem gerada e publicada no dockerhub, no endereço: <br />
+3) Desafio Go!  
+    Arquivos localizados na pasta 3-desafio_go.  
+    Aplicativo criado conforme instruções do exercício e disponibilizado na porta 8000.  
+    Testes Criados.  
+    Processo de CI ativado no GCB. Log do build encontra-se no arquivo "build.log"  
+    Imagem gerada e publicada no dockerhub, no endereço:   
         https://hub.docker.com/repository/docker/fabianoteixeirasilva/webserver-go-greeting<br />
 
-    Serviço disponibilizado no GCP, conforme instruções.<br /><br /> </p>
+    Serviço disponibilizado no GCP, conforme instruções.<br /> </p>
 
-Saida do comando kubectl get pods: 
+Saida do comando kubectl get pods:  
 ```
 kubectl get pods
 NAME                                     READY   STATUS    RESTARTS   AGE
@@ -34,8 +32,8 @@ nginx-exerck8s-65866d67b8-q8hnd          1/1     Running   0          21h
 php-apache-hpa-dbcb5c7d9-pwldb           1/1     Running   0          23h
 webserver-go-greeting-6b6bf9474d-z57qk   1/1     Running   0          19s
 ```
-<br /><br />
-Saida do comando kubectl get svc: <br />
+<br />
+Saida do comando kubectl get svc:  
 ```
 kubectl get svc
 NAME                            TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)          AGE
@@ -45,4 +43,3 @@ nginx-exerck8s-service          LoadBalancer   10.4.13.248   34.70.134.170   80:
 php-apache-hpa                  ClusterIP      10.4.15.129   <none>          80/TCP           23h
 webserver-go-greeting-service   LoadBalancer   10.4.1.236    34.71.211.54    8000:31220/TCP   4h41m
 ```
-
